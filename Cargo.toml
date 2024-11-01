@@ -1,0 +1,16 @@
+[package]
+name = "pysqlx"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "pysqlx"
+crate-type = ["cdylib"]
+
+[dependencies]
+dashmap = "6.1.0"
+hashbrown = { version = "0.15.0" }
+# pyo3 = { version = "0.22.5", features = ['experimental-inspect', 'experimental-async']}
+pyo3 = { git = "https://github.com/PyO3/pyo3.git", features = ['experimental-inspect', 'experimental-async']}
+sqlx = { version = "0.8.2", features = ["sqlite", "postgres", "tls-rustls", "runtime-async-std", "any"] }
