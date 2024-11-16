@@ -10,6 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 dashmap = "6.1.0"
+eyre = { version = "0.6.12" } # when pyo3 0.23 releases features = ["pyo3"] }
 hashbrown = { version = "0.15.0" }
 # pyo3 = { version = "0.22.5", features = ['experimental-inspect', 'experimental-async']}
 pyo3 = { git = "https://github.com/PyO3/pyo3.git", features = ['experimental-inspect', 'experimental-async']}
