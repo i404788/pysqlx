@@ -14,4 +14,13 @@ eyre = { version = "0.6.12" } # when pyo3 0.23 releases features = ["pyo3"] }
 hashbrown = { version = "0.15.0" }
 # pyo3 = { version = "0.22.5", features = ['experimental-inspect', 'experimental-async']}
 pyo3 = { git = "https://github.com/PyO3/pyo3.git", features = ['experimental-inspect', 'experimental-async']}
-sqlx = { version = "0.8.2", features = ["sqlite", "postgres", "tls-rustls", "runtime-async-std", "any"] }
+sqlx = { git = "https://github.com/i404788/sqlx.git", features = ["sqlite", "postgres", "tls-rustls", "runtime-async-std", "any"] }
+bytecount = { version = "^0.6.7", default-features = false, features = ["runtime-dispatch-simd"] }
+
+futures-core = { version = "0.3.31" }
+futures = "0.3.31"
+
+
+[features]
+intrinsics = []
+optimize = []
