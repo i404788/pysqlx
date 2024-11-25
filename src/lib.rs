@@ -149,7 +149,7 @@ impl SqlxRow {
                     sqlx::any::AnyValueKind::Text(v) => unicode_from_str(&v),
                     sqlx::any::AnyValueKind::Blob(v) => unsafe {
                         pyo3::ffi::PyBytes_FromStringAndSize(
-                            v.as_ptr() as *const i8,
+                            v.as_ptr() as *const _,
                             v.len() as isize,
                         )
                     },
