@@ -129,13 +129,13 @@ impl SqlxRow {
                 let v = ValueRef::to_owned(&v).to_owned();
                 match v.kind {
                     sqlx::any::AnyValueKind::Bool(b) => unsafe {
-                        pyo3::ffi::PyBool_FromLong(b as i64)
+                        pyo3::ffi::PyBool_FromLong(b as _)
                     },
                     sqlx::any::AnyValueKind::SmallInt(a) => unsafe {
-                        pyo3::ffi::PyLong_FromLongLong(a as i64)
+                        pyo3::ffi::PyLong_FromLongLong(a as _)
                     },
                     sqlx::any::AnyValueKind::Integer(a) => unsafe {
-                        pyo3::ffi::PyLong_FromLongLong(a as i64)
+                        pyo3::ffi::PyLong_FromLongLong(a as _)
                     },
                     sqlx::any::AnyValueKind::BigInt(a) => unsafe {
                         pyo3::ffi::PyLong_FromLongLong(a)
