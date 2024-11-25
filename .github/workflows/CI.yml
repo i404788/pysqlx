@@ -35,7 +35,12 @@ jobs:
           target: ${{ matrix.target }}
           args: --release --out dist --find-interpreter
           sccache: 'true'
-          manylinux: 2_28
+          manylinux: auto
+          before-script-linux: |
+            set -e
+            # We can remove this once we upgrade to 2_28.
+            # https://github.com/briansmith/ring/issues/1728
+            export CFLAGS_aarch64_unknown_linux_gnu="-D__ARM_ARCH=8"
       - name: Upload wheels
         uses: actions/upload-artifact@v3
         with:
